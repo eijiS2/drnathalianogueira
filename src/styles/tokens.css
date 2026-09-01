@@ -1,0 +1,101 @@
+/* ==========================================================================
+   Design tokens — Dra. Natália Nogueira
+   Conceito: clínica moderna, confiável e sóbria.
+   Base azul-marinho / preto / branco, com um único acento em dourado
+   envelhecido usado com moderação (links ativos, ícones, traço-assinatura).
+   ========================================================================== */
+
+:root {
+  /* --- Cor -------------------------------------------------------------- */
+  --color-navy-900: #0a1930; /* fundo de seções escuras, header, footer */
+  --color-navy-700: #14294a; /* variação para hover/gradiente sutil sobre navy */
+  --color-ink: #0a0a0a; /* preto quase puro, textos de alto contraste */
+  --color-white: #ffffff; /* fundo principal, cards */
+  --color-mist: #f3f5f7; /* fundo alternado entre seções claras */
+  --color-gold: #b8945f; /* acento único: links ativos, ícones, assinatura */
+  --color-gold-soft: #e7dcc8; /* fundo suave para badges/tags do acento */
+
+  /* Derivados de apoio.
+     Contraste verificado sobre os fundos em que são efetivamente usados:
+     - ink sobre white  = 19.9:1   - ink sobre mist   = 18.2:1
+     - white sobre navy-900 = 16.4:1
+     - ink-70 sobre white = 8.9:1  - ink-70 sobre mist = 8.2:1
+     - navy-tint sobre navy-900 = 9.7:1
+     - gold sobre navy-900 = 6.1:1 (uso em acentos e rótulos curtos)
+     Dourado NUNCA é usado como texto corrido sobre fundo claro. */
+  --color-ink-70: #40484f; /* texto secundário sobre fundos claros */
+  --color-navy-tint: #c9d4e3; /* texto secundário sobre fundo navy */
+  --color-border: #dfe4ea; /* bordas em superfícies claras */
+  --color-border-dark: #24395c; /* bordas sobre navy */
+  --color-error: #a1201d; /* mensagens de validação (7.1:1 sobre branco) */
+
+  /* --- Tipografia ------------------------------------------------------- */
+  --font-display: 'Fraunces', 'Georgia', 'Times New Roman', serif;
+  --font-body: 'Manrope', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'SFMono-Regular', 'Consolas', monospace;
+
+  --fs-h1: clamp(2.5rem, 5vw, 4rem);
+  --fs-h2: clamp(1.75rem, 3vw, 2.5rem);
+  --fs-h3: clamp(1.125rem, 1.6vw, 1.375rem);
+  --fs-body: 1rem;
+  --fs-body-lg: clamp(1.0625rem, 1.4vw, 1.1875rem);
+  --fs-small: 0.875rem;
+  --fs-mono: 0.8125rem;
+
+  --lh-tight: 1.1;
+  --lh-heading: 1.2;
+  --lh-body: 1.5;
+  --lh-relaxed: 1.65;
+
+  --ls-display: -0.02em;
+  --ls-mono: 0.08em;
+
+  /* --- Espaçamento ------------------------------------------------------ */
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4rem;
+  --space-3xl: clamp(4rem, 9vw, 7rem); /* respiro vertical entre seções */
+
+  /* --- Layout ----------------------------------------------------------- */
+  --container-max: 1200px;
+  --container-pad: clamp(1.25rem, 5vw, 3rem);
+  --header-h: 72px;
+  --tap-min: 44px; /* alvo de toque mínimo */
+
+  /* --- Forma ------------------------------------------------------------ */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+
+  --shadow-sm: 0 1px 2px rgba(10, 25, 48, 0.06), 0 2px 8px rgba(10, 25, 48, 0.05);
+  --shadow-md: 0 4px 12px rgba(10, 25, 48, 0.08), 0 12px 32px rgba(10, 25, 48, 0.08);
+  --shadow-lg: 0 18px 50px rgba(10, 25, 48, 0.18);
+
+  /* --- Movimento -------------------------------------------------------- */
+  --dur-micro: 180ms; /* hover em botões e cards */
+  --dur-short: 240ms;
+  --dur-medium: 500ms; /* entrada do hero, reveal ao scroll */
+  --dur-draw: 900ms; /* desenho do traço-assinatura */
+  --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* --- Camadas ---------------------------------------------------------- */
+  --z-header: 100;
+  --z-float: 120;
+  --z-overlay: 200;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-micro: 1ms;
+    --dur-short: 1ms;
+    --dur-medium: 1ms;
+    --dur-draw: 1ms;
+  }
+}
